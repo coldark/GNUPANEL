@@ -1,0 +1,118 @@
+/*
+* {
+margin: 0;
+padding: 0;
+height: 0;
+}
+*/
+/*
+html {
+ background-color:#636060;
+ text-align: center;
+}
+*/
+
+body {
+ background-color:#636060;
+ margin-left: 0px;
+ margin-top: 0px;
+ margin-right: 0px;
+ margin-bottom: 10px;
+}
+
+div.cabecera {
+background-color: #D5DAD3;
+width: 970px;
+height: 100px;
+margin: 0 auto;
+}
+
+div.contenedor {
+background-color: #D5DAD3;
+width: 970px;
+height: 600px;
+margin: 0 auto;
+}
+
+
+div.botonera {
+background-color: #D5DAD3;
+width: 0px;
+height: 600px;
+margin: 0 auto;
+float: left;
+}
+
+div.cuerpo {
+background-color: #D5DAD3;
+width: 970px;
+height: 600px;
+margin: 0 auto;
+float: left;
+}
+
+
+
+div.cuerpo table {
+background-color: #EEEEEE;
+width: 20%;
+margin-left: 40%;
+margin-top: 5%;
+align: center;
+border: solid;
+border-color: #B0B0B0;
+border-width: 1px; 
+}
+
+div.cuerpo table tr {
+background-color: #EEEEEE;
+margin: 0 auto;
+align: center;
+height: 40px;
+border: solid;
+border-color: #B0B0B0;
+border-width: 1px; 
+}
+
+div.cuerpo table tr td {
+background-color: #EEEEEE;
+margin: 0 auto;
+color: #888888;
+align: center;
+font-family: Bitstream vera sans;
+font-size: 20px;
+font-style: normal;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+border: solid;
+border-color: #B0B0B0;
+border-width: 1px; 
+}
+
+div.cuerpo table tr td a {
+background-color: #EEEEEE;
+color: #888888;
+margin: 0 auto;
+align: center;
+font-family: Bitstream vera sans;
+font-size: 20px;
+font-style: normal;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+}
+
+div.cuerpo table tr td a:visited {
+background-color: #EEEEEE;
+color: #888888;
+margin: 0 auto;
+align: center;
+font-family: Bitstream vera sans;
+font-size: 20px;
+font-style: normal;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+}
+

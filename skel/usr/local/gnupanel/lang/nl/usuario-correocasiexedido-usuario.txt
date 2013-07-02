@@ -1,0 +1,5 @@
+MAILBOX 90% VOL
+
+NOTIFICATIE: Uw account _CORREO_USUARIO_ is 90% vol.
+Verwijder A.U.B. onnodige bestanden en berichten.
+

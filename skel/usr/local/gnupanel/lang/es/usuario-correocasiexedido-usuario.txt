@@ -1,0 +1,5 @@
+Avisos GNUPanel - Mailbox 90% ocupado
+
+CUIDADO: La cuenta _CORREO_USUARIO_ ha llegado al 90% de su cuota. 
+Por favor elimine mensajes y archivos innecesarios usando el webmail o descargando mensajes del servidor con su cliente de correo.
+

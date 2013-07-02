@@ -1,0 +1,5 @@
+MAILBOX 100% VOL
+
+NOTIFICATIE: Het account _CORREO_USUARIO_ is vol. 
+Het zal normaal functioneren maar U zou onnodige bestanden en berichten moeten verwijderen om Uw account ruimte te preserveren.
+

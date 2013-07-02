@@ -1,0 +1,10 @@
+Avisos GNUPanel
+
+Este es un mensaje autom&aacute;tico enviado por GNUPanel.
+Su cuenta expira en _DIAS_DE_GRACIA_ dias, el _FECHA_.
+Para evitar la suspensi&oacute;n y posterior eliminaci&oacute;n de su cuenta de hosting ingrese a su Panel de Control _ENLACE_
+Dir&iacute;jase al CENTRO DE PAGOS y realice el pago correspondiente.
+
+Muchas gracias
+
+

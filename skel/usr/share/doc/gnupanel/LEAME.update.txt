@@ -1,0 +1,26 @@
+
+Guía básica de instalación
+
+Requisitos: Debian Etch
+
+Actualización
+    
+1) Actualice el sistema:
+    
+    apt-get update
+    apt-get dist-upgrade
+	
+2) Descargue la última versión estable de GNUPanel y descomprímala en un directorio.
+	
+3) Cambie al directorio anterior.
+	
+4) Ejecute el script ./install-debian-dep.sh
+
+5) Ejecute el script de instalacion: ./gnupanel-install.sh
+
+6) Ejecute gnupanel-update.sh
+	
+    
+    
+    
+    

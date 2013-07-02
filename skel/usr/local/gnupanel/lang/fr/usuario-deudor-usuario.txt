@@ -1,0 +1,12 @@
+GNUPanel Notice
+
+This is an automated message sent by GNUPanel.
+
+Your account has been expired and will be SUSPENDED after 48hs.
+
+Please login into your control panel here _ENLACE_
+
+Click on PAYMENT CENTER and do the required payment.
+
+Thank you.
+

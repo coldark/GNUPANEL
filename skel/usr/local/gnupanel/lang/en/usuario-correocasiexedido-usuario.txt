@@ -1,0 +1,6 @@
+MAILBOX 90% FULL
+
+ALERT: The account _CORREO_USUARIO_ is 90% full.
+Please delete unnecessary files and messages.
+
+

@@ -1,0 +1,497 @@
+/***********************************************************************************************************
+
+GNUPanel es un programa para el control de hospedaje WEB 
+Copyright (C) 2006  Ricardo Marcelo Alvarez rmalvarezkai@gmail.com
+
+------------------------------------------------------------------------------------------------------------
+
+Este archivo es parte de GNUPanel.
+
+	GNUPanel es Software Libre; Usted puede redistribuirlo y/o modificarlo
+	bajo los términos de la GNU Licencia Pública General (GPL) tal y como ha sido
+	públicada por la Free Software Foundation; o bien la versión 2 de la Licencia,
+	o (a su opción) cualquier versión posterior.
+
+	GNUPanel se distribuye con la esperanza de que sea útil, pero SIN NINGUNA
+	GARANTÍA; tampoco las implícitas garantías de MERCANTILIDAD o ADECUACIÓN A UN
+	PROPÓSITO PARTICULAR. Consulte la GNU General Public License (GPL) para más
+	detalles.
+
+	Usted debe recibir una copia de la GNU General Public License (GPL)
+	junto con GNUPanel; si no, escriba a la Free Software Foundation Inc.
+	51 Franklin Street, 5º Piso, Boston, MA 02110-1301, USA.
+
+------------------------------------------------------------------------------------------------------------
+
+This file is part of GNUPanel.
+
+	GNUPanel is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
+
+	GNUPanel is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with GNUPanel; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+------------------------------------------------------------------------------------------------------------
+
+***********************************************************************************************************/
+
+body {
+ background-color:#9E9E9E;
+ background-image: none;
+}
+
+/* Cabecera INICIO*/
+#cabecera {
+background-image: url('cabecera-login.jpg');
+background-repeat: no-repeat;
+background-color: #FFFFFF;
+background-position: 0 0;
+width: 500px;
+height: 80px;
+margin: 0 auto;
+margin-top: 110px;
+color: #000000;
+}
+/* Cabecera FIN*/
+
+
+/* Cuerpo INICIO*/
+#cuerpo {
+background-image: none;
+background-color:#9E9E9E;
+width: 500px;
+height: 268px;
+margin: 0 auto;
+margin-top: 0px;
+border: none;
+}
+
+#cuerpo h3 {
+font-family: 'Bitstream Vera Sans';
+font-size: 14px;
+font-style: normal;
+font-weight: bold;
+text-align: left;
+text-decoration: none;
+margin-left:20px;
+margin-right:20px;
+}
+
+/* Cuerpo FIN*/
+
+
+/*Botonera INICIO*/
+#botonera {
+background-image: none;
+background-color: #F0F1E1;
+width: 0px;
+height: 268px;
+float: left;
+margin-top: 0px;
+border-left:none;
+border-bottom:none;
+}
+
+
+#botonera h1 {
+font-family: 'Bitstream Vera Sans';
+color: #FFFFFF;
+font-size: 14px;
+font-style: normal;
+font-weight: bold;
+text-align: left;
+margin-left: 4px;
+text-decoration: none;
+}
+
+#botonera h1 a {
+font-family: 'Bitstream Vera Sans';
+font-size: 14px;
+color: #FFFFFF;
+font-style: normal;
+font-weight: bold;
+text-align: left;
+margin-left: 4px;
+text-decoration: none;
+}
+
+#botonera h1 a:visited {
+font-family: 'Bitstream Vera Sans';
+font-size: 14px;
+color: #FFFFFF;
+font-style: normal;
+font-weight: bold;
+text-align: left;
+margin-left: 4px;
+text-decoration: none;
+}
+
+
+#botonera h2 {
+font-family: 'Bitstream Vera Sans';
+color: #FFFFFF;
+font-size: 12px;
+font-style: normal;
+font-weight: normal;
+text-align: left;
+margin-left: 12px;
+text-decoration: none;
+}
+
+#botonera h2 a {
+font-family: 'Bitstream Vera Sans';
+color: #FFFFFF;
+font-size: 12px;
+font-style: normal;
+font-weight: normal;
+text-align: left;
+margin-left: 12px;
+text-decoration: none;
+}
+
+#botonera h2 a:visited {
+font-family: 'Bitstream Vera Sans';
+color: #FFFFFF;
+font-size: 12px;
+font-style: normal;
+font-weight: normal;
+text-align: left;
+margin-left: 12px;
+text-decoration: none;
+}
+
+
+
+#botonera h3 {
+font-family: 'Bitstream Vera Sans';
+color: #FFFFFF;
+font-size: 9px;
+font-style: normal;
+font-weight: normal;
+text-align: left;
+margin-left: 17px;
+text-decoration: none;
+}
+
+#botonera h3 a {
+font-family: 'Bitstream Vera Sans';
+color: #FFFFFF;
+font-size: 9px;
+font-style: normal;
+font-weight: normal;
+text-align: left;
+margin-left: 17px;
+text-decoration: none;
+}
+
+#botonera h3 a:visited {
+font-family: 'Bitstream Vera Sans';
+color: #FFFFFF;
+font-size: 9px;
+font-style: normal;
+font-weight: normal;
+text-align: left;
+margin-left: 17px;
+text-decoration: none;
+}
+
+#botonera h4 {
+font-family: 'Bitstream Vera Sans';
+color: #FFFFFF;
+font-size: 12px;
+font-style: normal;
+font-weight: normal;
+text-align: center;
+margin-left: 0px;
+text-decoration: none;
+}
+
+#botonera h4 a {
+font-family: 'Bitstream Vera Sans';
+color: #FFFFFF;
+font-size: 12px;
+font-style: normal;
+font-weight: normal;
+text-align: center;
+margin-left: 0px;
+text-decoration: none;
+}
+
+#botonera h4 a:visited {
+font-family: 'Bitstream Vera Sans';
+color: #FFFFFF;
+font-size: 12px;
+font-style: normal;
+font-weight: normal;
+text-align: center;
+margin-left: 0px;
+text-decoration: none;
+}
+
+/*Botonera FIN*/
+
+/*Principal Contenedor INICIO*/
+#contenedor {
+background-color: #F0F1E1;
+color: #000000;
+width: 500px;
+height: 270px;
+
+float: left;
+/*
+border: none;
+border-left: none;
+border-top: none;
+border-right-style:dotted;
+border-right-color:#000000;
+border-right-width:1px;
+border-bottom-style:dotted;
+border-bottom-color:#000000;
+border-bottom-width:1px;
+*/
+}
+
+#contenedor h1 {
+margin-left: 10px;
+color: #000000;
+}
+
+#contenedor h2 {
+margin-left: 10px;
+color: #000000;
+font-style: normal;
+font-size: 14px;
+font-weight: normal;
+}
+
+
+/*Principal Contenedor FIN*/
+
+
+/*Principal Titulo INICIO*/
+#titulo {
+background-color: #F0F1E1;
+width: 500px;
+height: 31px;
+margin: 0px auto;
+margin-bottom:0px;
+font-family: Verdana;
+font-size: 14px;
+font-style: normal;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+
+border-right: none;
+border-top: none;
+border-left: none;
+
+border-bottom: solid;
+border-bottom-color: #88C342;
+border-bottom-width: 1px;
+
+overflow:auto;
+}
+
+/*Principal Titulo FIN*/
+
+/*Principal Formularios INICIO*/
+#formulario {
+background-color: #F0F1E1;
+width: 500px;
+height: 140px;
+margin: 0px auto;
+font-family: Verdana;
+font-size: 12px;
+font-style: normal;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+
+border-bottom: solid;
+border-bottom-color: #88C342;
+border-bottom-width: 1px;
+
+overflow:auto;
+}
+
+#formulario ins {
+color: #000000;
+font-family: Verdana;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+text-align: left;
+}
+
+#formulario ins form {
+color: #000000;
+font-family: Verdana;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+}
+
+#formulario ins form table {
+color: #000000;
+font-family: Verdana;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+margin: 0 auto;
+}
+
+#formulario ins form table tr {
+color: #000000;
+font-family: Verdana;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+}
+
+#formulario ins form table tr td {
+color: #000000;
+font-family: Verdana;
+font-style: normal;
+font-weight: normal;
+text-decoration: none;
+text-align: left;
+}
+
+#formulario ins form table tr td em {
+color: #000000;
+font-family: Verdana;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+text-align: left;
+}
+
+#formulario ins table {
+color: #000000;
+font-family: Verdana;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+margin: 0 auto;
+}
+
+#formulario ins table tr {
+color: #000000;
+font-family: Verdana;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+}
+
+#formulario ins table tr td {
+color: #000000;
+font-family: Verdana;
+
+font-style: normal;
+font-weight: normal;
+text-decoration: none;
+}
+
+#formulario ins table tr td em {
+color: #000000;
+font-family: Verdana;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+}
+
+#formulario ins table tr td img {
+color: #000000;
+font-family: Verdana;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+text-align: center;
+
+}
+
+/*Principal Formularios Fin*/
+
+/*Principal Botones INICIO*/
+
+#botones {
+background-color: #F0F1E1;
+width: 500px;
+height: 30px;
+margin: 0px auto;
+margin-top:0px;
+margin-bottom:0px;
+font-family: 'Bitstream Vera Sans';
+font-size: 9px;
+font-style: normal;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+
+border-bottom: solid;
+border-bottom-color: #88C342;
+border-bottom-width: 1px;
+
+overflow:none;
+}
+
+#botones ins {
+background-color: #EEEEEE;
+width: 500px;
+height: 28px;
+margin: 0px auto;
+margin-top:1px;
+margin-bottom:1px;
+font-family: 'Bitstream Vera Sans';
+font-size: 9px;
+font-style: normal;
+font-weight: bold;
+text-align: center;
+text-decoration: none;
+}
+
+
+
+/*Principal Botones FIN*/
+
+/*Principal Ayuda INICIO*/
+#ayuda {
+background-color: #F0F1E1;
+width: 500px;
+height: 70px;
+margin: 0px auto;
+top:0px;
+font-family: Verdana;
+font-size: 9px;
+font-style: normal;
+font-weight: normal;
+text-align: left;
+text-decoration: none;
+border-bottom: none;
+overflow:auto;
+}
+
+#ayuda p {
+font-family: Verdana;
+font-size: 9px;
+font-style: normal;
+font-weight: normal;
+text-align: left;
+text-decoration: none;
+margin-top: 8px;
+margin-left: 8px;
+margin-right: 8px;
+}
+
+
+/*Principal Ayuda FIN*/
+

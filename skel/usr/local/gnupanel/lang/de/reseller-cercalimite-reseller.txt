@@ -1,0 +1,4 @@
+GNUPanel Notice
+
+Ihr Reseller Plan hat geringe Ressourcen zur Verfügung.
+

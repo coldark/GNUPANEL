@@ -1,0 +1,6 @@
+MAILBOX 100% FULL
+
+ALERT: The account _CORREO_USUARIO_ is full. 
+It will work normally but you should delete unnecessary files and messages to preserve other account space.
+
+

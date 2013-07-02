@@ -1,0 +1,5 @@
+Avisos GNUPanel
+
+Uno de sus revendedores ha superado el limite de recursos asignados.
+
+

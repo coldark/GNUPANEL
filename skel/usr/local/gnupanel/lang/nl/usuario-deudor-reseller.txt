@@ -1,0 +1,4 @@
+GNUPanel NOTIFICATIE!!! _DOMINIO_USUARIO_
+
+U heeft een gebruiker met saldo tekort.
+

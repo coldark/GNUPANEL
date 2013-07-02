@@ -1,0 +1,5 @@
+GNUPanel Notice
+
+You are surpassing the limit of assigned resources.
+
+

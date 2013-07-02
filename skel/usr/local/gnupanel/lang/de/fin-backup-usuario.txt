@@ -1,0 +1,3 @@
+GNUPanel Notice
+
+Ihr Backup wurde erfolgreich abgeschlossen.

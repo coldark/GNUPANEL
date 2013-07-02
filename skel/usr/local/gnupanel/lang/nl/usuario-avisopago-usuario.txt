@@ -1,0 +1,16 @@
+GNUPanel NOTIFICATIE!!!
+
+Dit is een automatisch gegenereerd bericht verstuurd door GNUPanel.
+
+Uw account zal verlopen in _DIAS_DE_GRACIA_ dagen, op de _FECHA_.
+
+Logt u A.U.B. hier in in uw controlle paneel: _ENLACE_
+
+Klik op BETALINGS CENTRUM en vernieuw.
+
+Dank U.
+
+
+
+
+

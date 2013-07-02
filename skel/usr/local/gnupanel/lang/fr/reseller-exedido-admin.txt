@@ -1,0 +1,6 @@
+GNUPanel Notice
+
+One reseller is surpassing the limit of assigned resources.
+
+
+

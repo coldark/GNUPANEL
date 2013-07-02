@@ -1,0 +1,4 @@
+MAILBOX 90% gefüllt
+
+ACHTUNG: Das Konto ist _CORREO_USUARIO_ zu 90% gefüllt.
+Bitte löschen Sie überflüssige Nachrichten und Dateien.

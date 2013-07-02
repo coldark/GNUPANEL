@@ -1,0 +1,4 @@
+GNUPanel Notice
+
+Ihre verfügbare Bandbreite ist gering.
+

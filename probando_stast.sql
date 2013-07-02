@@ -1,0 +1,1 @@
+SELECT dominio FROM gnupanel_usuario WHERE id_usuario = 8 AND EXISTS (SELECT ip_publica FROM gnupanel_ips_servidor WHERE CASE WHEN id_servidor = (SELECT id_servidor FROM gnupanel_servidores WHERE servidor = 'gnupanel') THEN ip_publica = '192.168.252.21' OR ip_privada = '192.168.252.21' ELSE false END);

@@ -1,0 +1,20 @@
+
+
+GRANT ALL PRIVILEGES ON *.* to root IDENTIFIED BY 'XXXXXXXXX' ;
+GRANT ALL PRIVILEGES ON *.* to root@localhost IDENTIFIED BY 'XXXXXXXXX' ;
+
+GRANT ALL PRIVILEGES ON *.* to 'debian-sys-maint' IDENTIFIED BY 'XXXXXXXXX' ;
+GRANT ALL PRIVILEGES ON *.* to 'debian-sys-maint'@localhost IDENTIFIED BY 'XXXXXXXXX' ;
+
+
+FLUSH PRIVILEGES ;
+
+
+
+
+
+
+
+
+
+

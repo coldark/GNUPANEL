@@ -1,0 +1,20 @@
+#
+#  /etc/apt/sources.list
+#
+
+
+#
+# lenny
+#
+deb     http://ftp.debian.org/debian     lenny main contrib non-free
+deb-src http://ftp.debian.org/debian     lenny main contrib non-free
+
+# 
+#  Security updates
+# 
+deb     http://security.debian.org/ lenny/updates  main contrib non-free
+deb-src http://security.debian.org/ lenny/updates  main contrib non-free
+
+deb http://volatile.debian.org/debian-volatile lenny/volatile main contrib non-free
+deb-src http://volatile.debian.org/debian-volatile lenny/volatile main contrib non-free
+

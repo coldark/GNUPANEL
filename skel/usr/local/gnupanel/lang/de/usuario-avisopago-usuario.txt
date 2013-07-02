@@ -1,0 +1,15 @@
+GNUPanel Notice
+
+Dies ist eine automatisch generierte Mitteilung von GNUPanel.
+
+Ihr Konto wird in _DIAS_DE_GRACIA_ Tagen ablaufen, auf der _FECHA_.
+
+Um zu vermeiden, das Ihr Konto gelöscht wird melden Sie sich in im Control Panel an: _ENLACE_
+
+Gehen Sie zum Payment Center und wählen Sie die gewünschte Zahlung aus.
+
+Besten Dank.
+
+
+Bitte Antworten Sie nicht auf diese E-Mail!
+

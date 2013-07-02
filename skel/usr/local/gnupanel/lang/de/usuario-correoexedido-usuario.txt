@@ -1,0 +1,6 @@
+!!! MAILBOX zu 100% voll! !!!
+
+ACHTUNG: Das Konto _CORREO_USUARIO_ ist voll.
+Sie sollten nicht benötigte Dateien und Einträge löschen!
+
+Es kann sonst vorkommen das Nachrichten nicht ankommen!

@@ -1,0 +1,6 @@
+Avisos GNUPanel
+
+Ha superado la transferencia mensual asignada a su plan.
+Su cuenta ha sido suspendida.
+
+

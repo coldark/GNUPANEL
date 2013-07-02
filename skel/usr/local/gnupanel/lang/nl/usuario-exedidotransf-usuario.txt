@@ -1,0 +1,4 @@
+GNUPanel NOTIFICATIE!!!
+
+Uw account is geschorst vanwege het overschrijden van de bandbreedte.
+

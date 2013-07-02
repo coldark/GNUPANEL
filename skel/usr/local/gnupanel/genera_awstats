@@ -1,0 +1,113 @@
+#!/bin/sh
+
+#############################################################################################################
+#
+#GNUPanel es un programa para el control de hospedaje WEB 
+#Copyright (C) 2006  Ricardo Marcelo Alvarez rmalvarezkai@gmail.com
+#
+#------------------------------------------------------------------------------------------------------------
+#
+#Este archivo es parte de GNUPanel.
+#
+#	GNUPanel es Software Libre; Usted puede redistribuirlo y/o modificarlo
+#	bajo los términos de la GNU Licencia Pública General (GPL) tal y como ha sido
+#	públicada por la Free Software Foundation; o bien la versión 2 de la Licencia,
+#	o (a su opción) cualquier versión posterior.
+#
+#	GNUPanel se distribuye con la esperanza de que sea útil, pero SIN NINGUNA
+#	GARANTÍA; tampoco las implícitas garantías de MERCANTILIDAD o ADECUACIÓN A UN
+#	PROPÓSITO PARTICULAR. Consulte la GNU General Public License (GPL) para más
+#	detalles.
+#
+#	Usted debe recibir una copia de la GNU General Public License (GPL)
+#	junto con GNUPanel; si no, escriba a la Free Software Foundation Inc.
+#	51 Franklin Street, 5º Piso, Boston, MA 02110-1301, USA.
+#
+#------------------------------------------------------------------------------------------------------------
+#
+#This file is part of GNUPanel.
+#
+#	GNUPanel is free software; you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation; either version 2 of the License, or
+#	(at your option) any later version.
+#
+#	GNUPanel is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#	You should have received a copy of the GNU General Public License
+#	along with GNUPanel; if not, write to the Free Software
+#	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#
+#------------------------------------------------------------------------------------------------------------
+#
+#############################################################################################################
+
+function permisos_directorio
+    {
+    directorio=$1
+    usuario=$2
+    grupo=$3
+    p_archivo=$4
+    p_directorio=$5
+    chown -R ${usuario} ${directorio}
+    chgrp -R ${grupo} ${directorio}
+    chmod ${p_directorio} ${directorio}
+    #cd ${directorio}
+    find ${directorio} -type d -exec chmod $p_directorio {} \;
+    find ${directorio} -type f -exec chmod $p_archivo {} \;
+    }
+
+function permisos_archivo
+    {
+    archivo=$1
+    usuario=$2
+    grupo=$3
+    p_archivo=$4
+    chown ${usuario} ${archivo}
+    chgrp ${grupo} ${archivo}
+    chmod ${p_archivo} ${archivo}
+    }
+
+DOMINIO=$1
+DIRECTORIO=$2
+
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -update
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=alldomains -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.alldomains.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=allhosts -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.allhosts.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=lasthosts -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.lasthosts.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=unknownip -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.unknownip.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=alllogins -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.alllogins.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=lastlogins -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.lastlogins.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=allrobots -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.allrobots.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=lastrobots -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.lastrobots.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=urldetail -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.urldetail.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=urlentry -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.urlentry.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=urlexit -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.urlexit.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=browserdetail -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.browserdetail.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=osdetail -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.osdetail.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=unknownbrowser -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.unknownbrowser.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=unknownos -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.unknownos.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=refererse -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.refererse.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=refererpages -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.refererpages.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=keyphrases -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.keyphrases.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=keywords -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.keywords.html
+/usr/bin/perl /usr/lib/cgi-bin/awstats.pl -config=${DOMINIO} -output=errors404 -staticlinks > ${DIRECTORIO}awstats.${DOMINIO}.errors404.html
+
+/bin/echo "AddDefaultCharset utf-8" > ${DIRECTORIO}.htaccess
+
+/bin/rm -f -R ${DIRECTORIO}/icon
+
+/bin/cp -f -R /usr/share/awstats/icon ${DIRECTORIO}
+
+permisos_directorio ${DIRECTORIO} www-data www-data 0400 0500 
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+
+Guía básica de instalación
+
+Requisitos: Debian Etch
+
+Instalación
+
+GNUPanel debe ser instalado sobre una instalación nueva de Debian sin sitios alojados. Se recomienda un sistema Debian Etch mínimo. Puede descargar una imagen del CD de instalación por red (100-150 MB) desde aquí.
+Una vez que el sistema base está listo los pasos a seguir para poner el panel en funcionamiento son los siguientes:
+
+0) Edite /etc/hosts y agregue una línea como la siguiente:
+
+xxx.xxx.xxx.xxx   mi_dominio.com   mi_maquina
+
+(utilizando su IP principal y el dominio asociado al servidor)
+
+1) Abra una shell como root.
+
+2) Ejecute dpkg-reconfigure locales y marque todos los "en_US", "es_ES" y "es_AR".
+
+3) Edite /etc/apt/sources.list y modifíquelo para que luzca así:
+
+    deb http://ftp.debian.org/debian/ etch main contrib non-free
+    deb http://security.debian.org/ etch/updates main contrib non-free
+    
+4) Actualice el sistema:
+    
+    apt-get update
+    apt-get dist-upgrade
+	
+5) Descargue la última versión estable de GNUPanel y descomprímala en un directorio.
+	
+6) Ejecute el script de instalación: ./install-debian-dep.sh
+
+7) Ejecute el script de instalación: ./gnupanel-install.sh
+
+8) Ejecute gnupanel-config.sh
+	
+9) Cuando el proceso haya finalizado encontrará la interfase de administrador en http://ip_principal/admin. Agregue todas las direcciones IP destinadas al servidor desde el menú Principal --> Agregar IP. También debería añadir los servidores secundarios si los hubiera.
+	
+10) Configure el primer plan revendedor y el primer revendedor, que estará asociado al dominio principal (el usuario correspondiente será creado automáticamente).
+
+11) A partir de este momento puede acceder a todos los niveles de GNUPanel:
+	
+    https://gnupanel.dominio_principal/admin
+    https://gnupanel.dominio_principal/reseller
+    https://gnupanel.dominio_principal/usuarios
+    https://gnupanel.dominio_principal/mail
+    
+    
+    
+    

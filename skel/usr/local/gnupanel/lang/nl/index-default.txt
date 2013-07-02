@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+<title>newindex.gnupanel.org</title> 
+<STYLE type="text/css" > 
+/*
+* {margin: 0;padding: 0;height: 0;}
+*/
+/*
+html {background-color:#636060;text-align: center;}
+*/
+
+body {background-color:#d5dad3;margin-left: 0px;margin-top: 0px;margin-right: 0px;margin-bottom: 10px;}
+div.cabecera {width: 970px;height: 50px;margin: 0 auto;}
+div.contenedor {width: 970px;height: 600px;margin: 0 auto;}
+div.botonera {background-color: #D5DAD3;width: 0px;height: 600px;margin: 0 auto;float: left;}
+div.cuerpo {width:970px;height: 600px;margin: 0 auto;float: left;}
+div.cuerpo table {background-color:#EEEEEE;width:52%;margin-left:24%;margin-top:6%;align: center;border:solid;border-color:#BBB;border-width: 1px;}
+div.cuerpo table tr {background-color:#EEEEEE;margin: 0 auto;align:center;height:40px;}
+div.cuerpo table tr td {margin: 0 auto;padding:12px 0;color:#444;align: center;font-size:16px;text-align: center;text-decoration: none;border: solid;border-color: #ccc;border-width: 1px;}
+div.cuerpo table tr td.middle {font-size:22px;}
+div.cuerpo table tr td a {background-color: #EEEEEE;color: #888888;margin: 0 auto;align: center;font-style: normal;text-decoration: none;}
+div.cuerpo table tr td a:visited {background-color: #EEEEEE;color: #888888;margin: 0 auto;align: center;font-family: Bitstream vera sans;font-size: 20px;font-style: normal;font-weight: bold;text-align: center;text-decoration: none;}
+</STYLE> 
+</head> 
+
+<body> 
+<div class="cabecera" > </div> 
+<div class="contenedor" > 
+	<div class="botonera" > </div> 
+	<div class="cuerpo" > 
+	<br> 
+		<table>
+			<tr> <td> <b>_SUBDOMINIO_</b> </td> </tr>
+			<tr> <td class="middle">.: site under construction :.</td> </tr>
+			<tr> <td><a href="http://gnutransfer.com">GNUTRANSFER</a> Web Hosting<br />Powered by <a href="http://gnupanel.org">GNUPanel</a></td> </tr>
+		</table> 
+	</div> 
+</div> 
+</body> 
+</html> 

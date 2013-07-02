@@ -1,0 +1,38 @@
+# BEGIN Aca se editan los mensajes que se muestran
+
+MSG_0_INICIO="GNUPanel configuration start"
+MSG_1_INICIO="\n\nDo you want to configure GNUPanel now?\n\nRemember that this script will modify apache, postfix, courier, proftpd, powerdns, etc current settings.\nPlease backup all these configuration files before start GNUPanel configuration."
+MSG_0_NOINICIO="\n\nYou can configure GNUPanel anytime running gnupanel-config.sh from your command line.\n\n"
+MSG_2_COMIENZO="\n\nStarting GNUPanel configuration\n\n"
+
+MSG_0_GNUPANEL_ERROR_PASS="\n\nPasswords can  have characters from a-z A-Z 0-9 and _ \nand must have 8 to 30 characters\n\n"
+MSG_0_GNUPANEL_ERROR_IP="\n\nIt seems to be an invalid IP\n\n"
+MSG_0_GNUPANEL_ERROR_DOMINIO="\n\nIt seems to be an invalid domain\n\n"
+MSG_0_GNUPANEL_ERROR_CORREO="\n\nIt seems to be an invalid e-mail address\n\n"
+MSG_0_GNUPANEL_ERROR_SERVIDOR="\n\nIt seems to be an invalid name\n\n"
+MSG_0_GNUPANEL_ERROR_NUMERO="\n\nIt seems to be an invalid number\n\n"
+MSG_0_GNUPANEL_ERROR_PASS_DIST="\n\nThe entered passwords should be the same\n\n"
+MSG_0_COMPLETADO="\n\nGNUPanel configuration is complete\n\n"
+MSG_0_GNUPANEL_PG="Write postgresql password for the GNUPanel main database"
+MSG_0_PROFTPD_PG="Write postgresql password for proftpd"
+MSG_0_PDNS_PG="Write postgresql password for powerdns"
+MSG_0_APACHE_PG="Write postgresql password for apache"
+MSG_0_POSTFIX_PG="Write postgresql password for postfix"
+MSG_0_MYSQL_PASSWD="Write root password for MySQL"
+MSG_0_IP="Write main IP for this server"
+MSG_0_IP_INTERNET="Write public IP for this server"
+MSG_0_IP_DNS_PROVEEDOR="Write the IP of your provider nameserver"
+MSG_0_IP_ALLOW_RECURSION="Write the IP for the host that can use your DNS"
+MSG_0_DOMINIO_PRINCIPAL="Write main domain for GNUPanel (without www)"
+MSG_0_CORREO_ADMIN="Write GNUPanel administrator mail address"
+MSG_0_CONTRASENA_MAILMAN="Write Mailman admin password"
+MSG_0_NOMBRE_SERVIDOR="Set a name for this server (hostname)"
+MSG_0_TRANSFERENCIA_SERVIDOR="Write the allowed bandwidth for this server (MB)"
+MSG_0_ESPACIO_SERVIDOR="Write the allowed disk space for this server (MB)"
+MSG_0_CONTRASENA_ADMIN_0="Write Admin user password"
+MSG_0_CONTRASENA_ADMIN_1="Rewrite Admin user password"
+
+# END Aca se editan los mensajes que se muestran
+
+
+

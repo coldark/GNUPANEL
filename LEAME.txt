@@ -1,0 +1,39 @@
+
+Guía básica de instalación
+
+Requisitos: Debian Squeeze
+
+Instalación
+
+GNUPanel debe ser instalado sobre una instalación nueva de Debian sin sitios alojados. Se recomienda un sistema Debian Squeeze mínimo.
+Una vez que el sistema base está listo los pasos a seguir para poner el panel en funcionamiento son los siguientes:
+
+1) Abra una shell como root.
+
+2) Descargue la última versión estable de GNUPanel y descomprímala en un directorio.
+
+3) Ejecute el script de instalación:
+
+    ./install-dep.sh
+
+4) Ejecute el script de instalación:
+
+    ./gnupanel-install.sh
+
+5) Ejecute
+
+    gnupanel-config.sh
+
+6) Cuando el proceso haya finalizado encontrará la interfase de administrador en http://ip_principal/admin. Agregue todas las direcciones IP destinadas al servidor desde el menú Principal --> Agregar IP. También debería añadir los servidores secundarios si los hubiera.
+
+7) Configure el primer plan revendedor y el primer revendedor, que estará asociado al dominio principal (el usuario correspondiente será creado automáticamente).
+
+8) A partir de este momento puede acceder a todos los niveles de GNUPanel:
+
+    https://gnupanel.dominio_principal/admin
+    https://gnupanel.dominio_principal/reseller
+    https://gnupanel.dominio_principal/usuarios
+    https://gnupanel.dominio_principal/mail
+
+
+

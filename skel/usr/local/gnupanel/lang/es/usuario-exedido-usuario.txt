@@ -1,0 +1,6 @@
+Avisos GNUPanel
+
+Ha superado el espacio en disco asignado a su plan.
+Su cuenta ha sido suspendida.
+
+

@@ -1,0 +1,14 @@
+GNUPanel Notice
+
+This is an automated message sent by GNUPanel.
+
+Your account will expire in _DIAS_DE_GRACIA_ days, on the _FECHA_.
+
+To avoid the account to be suspended/deleted please login into your control panel here: _ENLACE_
+
+Go to PAYMENT CENTER and do the required payment.
+
+Thank you.
+
+
+
