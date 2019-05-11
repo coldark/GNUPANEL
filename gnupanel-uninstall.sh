@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/bin/bash
 
 #############################################################################################################
 #
@@ -45,36 +45,85 @@
 #
 #############################################################################################################
 
-use Pg;
+APT=/usr/bin/apt-get
+PROGRAMAS=./listado.apt
+CAT=/bin/cat
+GREP=/bin/grep
+SKEL=skel
+CP=/bin/cp
+CUSUARIO=/bin/chown
+CMODO=/bin/chmod
+MAWK=/usr/bin/mawk
+ECHO=/bin/echo
+RM=/bin/rm
+UPDATE_RD_D=/usr/sbin/update-rc.d
 
-sub trim 
+function desinstala_gnupanel
 {
-my($string)=@_;
-for ($string)
-    {
-    s/^\s+//;
-    s/\s+$//;
-    }
-return $string;
+    echo "Desinstalando GNUPanel"
+
+    ${UPDATE_RD_D} -f gnupanel-transf remove
+
+    if [ -d /etc/gnupanel ];
+    then
+	${RM} -f -r /etc/gnupanel
+    fi
+
+    if [ -f /etc/init.d/gnupanel-transf ]
+    then
+	${RM} -f /etc/init.d/gnupanel-transf
+    fi
+
+    if [ -f /etc/cron.d/gnupanel-stats ]
+    then
+	${RM} -f /etc/cron.d/gnupanel-stats
+    fi
+
+    if [ -f /usr/bin/gnupanel-config.sh ]
+    then
+	${RM} -f /usr/bin/gnupanel-config.sh
+    fi
+
+    if [ -f /usr/bin/gnupanel-update.sh ]
+    then
+	${RM} -f /usr/bin/gnupanel-update.sh
+    fi
+
+    if [ -d /usr/share/gnupanel ]
+    then
+	${RM} -f -r /usr/share/gnupanel
+    fi
+
+    if [ -d /var/lib/gnupanel ]
+    then
+	${RM} -f -r /var/lib/gnupanel
+    fi
+
+    if [ -d /usr/share/doc/gnupanel ]
+    then
+	${RM} -f -r /usr/share/doc/gnupanel
+    fi
+
+    if [ -d /usr/local/gnupanel ]
+    then
+	${RM} -f -r /usr/local/gnupanel
+    fi
 }
 
-chdir("/");
+#########################################################################################################
 
-require "/etc/gnupanel/gnupanel.conf.pl";
+TIEMPO=`date +%s`
 
-$fecha_Y = `date +%Y`;
-$fecha_m = `date +%m`;
-$fecha_d = `date +%d`;
-$fecha = trim($fecha_Y).trim($fecha_m).trim($fecha_d);
-$fecha = trim($fecha);
-$archivo = "/tmp/backup-gnupanel-".$nombre_servidor."-".$fecha.".sql.gz";
-$comando = "su postgres -c \"/usr/lib/postgresql/9.1/bin/pg_dump -Fc -Z 9 -c -f $archivo ";
-$comandar = $comando.$database." \"";
-system($comandar);
+#########################################################################################################
 
-$destino = $correo_administrador;
-$comando = "/bin/echo \"\n\nBackup GNUPanel\n\n\n\" | /usr/bin/mutt -s \"Backup GNUPanel\" -a $archivo -- $destino ";
-system($comando);
+if [ $(id -u) != 0 ] 
+then
+    echo "You must first be root."
+    exit 1
+fi
 
-$comando = "/bin/rm -f $archivo ";
-system($comando);
+desinstala_gnupanel
+
+#########################################################################################################
+
+

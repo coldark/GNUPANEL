@@ -616,7 +616,7 @@ sub configura_apache
 	if($php_safe_mode==1)
 	    {
     	    print SUBDOMINIO "\tphp_admin_value safe_mode 1 \n";
-	    print SUBDOMINIO "\tphp_admin_value open_basedir ".dame_directorio_superior($documentroot)."/ \n";
+	    print SUBDOMINIO "\tphp_admin_value open_basedir ".dame_directorio_superior($documentroot)."/:/usr/share/php \n";
 	    print SUBDOMINIO "\tphp_admin_value upload_tmp_dir ".dame_directorio_superior($documentroot)."/tmp/uploads/ \n";
 	    print SUBDOMINIO "\tphp_admin_value session.save_path ".dame_directorio_superior($documentroot)."/tmp/ \n";
 	    print SUBDOMINIO "\tphp_admin_value suhosin.executor.func.blacklist ".$funciones_prohibidas." \n";
@@ -625,7 +625,7 @@ sub configura_apache
 	else
 	    {
     	    print SUBDOMINIO "\tphp_admin_value safe_mode 0 \n";
-	    print SUBDOMINIO "\tphp_admin_value open_basedir ".dame_directorio_superior($documentroot)."/ \n";
+	    print SUBDOMINIO "\tphp_admin_value open_basedir ".dame_directorio_superior($documentroot)."/:/usr/share/php \n";
 	    print SUBDOMINIO "\tphp_admin_value upload_tmp_dir ".dame_directorio_superior($documentroot)."/tmp/uploads/ \n";
 	    print SUBDOMINIO "\tphp_admin_value session.save_path ".dame_directorio_superior($documentroot)."/tmp/ \n";
 	    print SUBDOMINIO "\tphp_admin_value suhosin.executor.func.blacklist ".$funciones_prohibidas." \n";
