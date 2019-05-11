@@ -1,0 +1,13 @@
+#!/bin/sh 
+### BEGIN INIT INFO
+# Provides:          proftpd
+# Required-Start:    $remote_fs $syslog $local_fs $network postgresql
+# Required-Stop:     $remote_fs $syslog $local_fs $network postgresql
+# Should-Start:      $named
+# Should-Stop:       $named
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Starts ProFTPD daemon
+# Description:       This script runs the FTP service offered
+#                    by the ProFTPD daemon
+### END INIT INFO

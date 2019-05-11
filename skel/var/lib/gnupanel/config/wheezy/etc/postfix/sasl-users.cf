@@ -1,0 +1,8 @@
+user=postfix
+password=PASAPORTE
+dbname=gnupanel
+table=gnupanel_postfix_mailuser
+hosts=localhost
+select_field=passwd
+where_field=address
+additional_conditions = and active = 1

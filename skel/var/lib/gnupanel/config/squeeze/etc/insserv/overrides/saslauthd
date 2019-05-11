@@ -1,0 +1,11 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          saslauthd
+# Required-Start:    $local_fs $remote_fs postgresql
+# Required-Stop:     $local_fs $remote_fs postgresql
+# Default-Start:     2 3 4 5
+# Default-Stop:      1
+# Short-Description: saslauthd startup script
+# Description:       This script starts the saslauthd daemon. It is
+#                    configured using the file /etc/default/saslauthd.
+### END INIT INFO

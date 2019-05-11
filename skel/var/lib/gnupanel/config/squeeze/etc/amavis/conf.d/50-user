@@ -1,0 +1,44 @@
+use strict;
+
+#
+# Place your configuration directives here.  They will override those in
+# earlier files.
+#
+# See /usr/share/doc/amavisd-new/ for documentation and examples of
+# the directives you can use in this file
+#
+read_array(\@inet_acl,'/etc/amavis/redes.lst');
+
+$pax = 'pax';
+
+$max_servers = 1;
+
+$sa_spam_modifies_subj = 0;
+#$sa_spam_subject_tag = '** POSIBLE SPAM ** ';
+
+$final_virus_destiny = D_PASS;
+$final_spam_destiny = D_PASS;
+$final_banned_destiny = D_PASS;
+$final_bad_header_destiny = D_PASS;
+
+$sa_mail_body_size_limit = 64*1024;
+
+#$sa_tag_level_deflt = 1.0;
+$sa_tag_level_deflt = -9999;
+
+#$sa_tag2_level_deflt = 5.0;
+$sa_tag2_level_deflt = 5.0;
+$sa_tag3_level_deflt = $sa_tag2_level_deflt;
+$sa_kill_level_deflt = $sa_tag2_level_deflt;
+
+read_array(\@local_domains_acl,'/etc/amavis/localdomains.lst');
+read_hash(\%whitelist_sender, '/etc/amavis/whitelist.lst');
+read_hash(\%blacklist_sender, '/etc/amavis/blacklist.lst');
+read_hash(\%spam_lovers, '/etc/amavis/spamlovers.lst');
+
+@bypass_virus_checks_maps = (\%bypass_virus_checks, \@bypass_virus_checks_acl, \$bypass_virus_checks_re);
+
+@bypass_spam_checks_maps = (\%bypass_spam_checks, \@bypass_spam_checks_acl, \$bypass_spam_checks_re);
+
+#------------ Do not modify anything below this line -------------
+1;  # insure a defined return

@@ -1,0 +1,13 @@
+# dspam.debug file is only used if dspam is built with 
+# verbose-debug which is not recommended for a production server
+#/var/log/dspam/dspam.debug
+/var/log/dspam/dspam.messages
+/var/log/dspam/sql.errors
+{
+	daily
+	size 4M
+	missingok
+	notifempty
+	rotate 9
+	compress
+}

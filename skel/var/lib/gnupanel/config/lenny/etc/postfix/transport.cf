@@ -1,0 +1,7 @@
+user=postfix
+password=PASAPORTE
+dbname=gnupanel
+table=gnupanel_postfix_transport
+hosts=localhost
+select_field=transport
+where_field=dominio

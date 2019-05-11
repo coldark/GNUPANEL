@@ -1,0 +1,136 @@
+
+
+	#Interfaz usuarios
+
+	Alias /users /usr/share/gnupanel/usuarios
+	Alias /usuarios /usr/share/gnupanel/usuarios
+
+	<Directory /usr/share/gnupanel/usuarios> 
+	Options FollowSymLinks
+	php_admin_value safe_mode On 
+	php_admin_value	max_execution_time 0
+	php_flag register_globals Off 
+	php_admin_value safe_mode_exec_dir /usr/local/gnupanel/bin 
+	php_admin_value include_path .:/usr/share/php:/usr/share/gnupanel/estilos:/usr/share/gnupanel/mensaje-gnu 
+	</Directory> 
+
+	#Interfaz reseller
+
+	Alias /reseller /usr/share/gnupanel/reseller
+
+	<Directory /usr/share/gnupanel/reseller> 
+	Options FollowSymLinks
+	php_admin_value safe_mode On 
+	php_flag register_globals Off 
+	php_admin_value safe_mode_exec_dir /usr/local/gnupanel/bin 
+	php_admin_value include_path .:/usr/share/php:/usr/share/gnupanel/estilos:/usr/share/gnupanel/mensaje-gnu 
+	</Directory> 
+
+	#Interfaz admin
+
+	Alias /admin /usr/share/gnupanel/admin
+
+	<Directory /usr/share/gnupanel/admin> 
+	Options FollowSymLinks
+	php_admin_value safe_mode On 
+	php_flag register_globals Off 
+	php_admin_value safe_mode_exec_dir /usr/local/gnupanel/bin 
+	php_admin_value include_path .:/usr/share/php:/usr/share/gnupanel/estilos:/usr/share/gnupanel/mensaje-gnu 
+	</Directory> 
+
+
+	#Interfaz Mail
+
+	Alias /mail /usr/share/gnupanel/mail
+
+	<Directory /usr/share/gnupanel/mail> 
+	Options FollowSymLinks
+	php_admin_value safe_mode On 
+	php_flag register_globals Off 
+	php_admin_value include_path .:/usr/share/php:/usr/share/gnupanel/estilos:/usr/share/gnupanel/mensaje-gnu 
+	</Directory> 
+
+	#squirrelmail
+
+	Alias /webmail /var/lib/roundcube
+		
+	##<Directory /usr/share/squirrelmail>
+	##    php_flag register_globals off
+	##    php_flag output_buffering On
+	##    Options Indexes FollowSymLinks
+	##    <IfModule mod_dir.c>
+	##	DirectoryIndex index.php
+	##    </IfModule>
+
+	##    # access to configtest is limited by default to prevent information leak
+	##    <Files configtest.php>
+	##	order deny,allow
+	##	deny from all
+	##	allow from 127.0.0.1
+	##    </Files>
+	##</Directory>
+
+	# phpmyadmin
+
+	Alias /phpmyadmin /usr/share/phpmyadmin
+
+	<Directory /usr/share/phpmyadmin/>
+	    AllowOverride All
+	    php_admin_value suhosin.request.max_vars 2048
+	    php_admin_value suhosin.post.max_vars 2048
+	    php_admin_value suhosin.request.max_array_index_length 256
+	    php_admin_value suhosin.post.max_array_index_length 256
+	    php_admin_value suhosin.request.max_totalname_length 8192
+	    php_admin_value suhosin.post.max_totalname_length 8192
+	    php_admin_value suhosin.sql.bailout_on_error Off
+	</Directory>
+
+	# phppgadmin
+
+	Alias /phppgadmin /usr/share/phppgadmin/
+
+	<DirectoryMatch /usr/share/phppgadmin/>
+
+	    Options +FollowSymLinks
+	    AllowOverride None
+
+	    #order deny,allow
+	    #deny from all
+	    #allow from 127.0.0.0/255.0.0.0
+	    # allow from all
+
+	    php_flag magic_quotes_gpc Off
+	    php_flag track_vars On
+	    php_flag register_globals On
+	    php_value include_path .
+	    #php_admin_value open_basedir /usr/share/phppgadmin
+	    php_admin_value error_reporting E_ERROR
+	    php_admin_value safe_mode_exec_dir /usr/share/phppgadmin/bin
+	    php_admin_value safe_mode_allowed_env_vars PHP_,PG
+
+	</DirectoryMatch>
+
+	# Mailman
+
+	ScriptAlias /lists/cgi-bin/mailman /usr/lib/cgi-bin/mailman
+
+	<Directory /usr/lib/cgi-bin/mailman>  
+	    AllowOverride None 
+	    Options ExecCGI 
+	    Order allow,deny 
+	    Allow from all 
+	</Directory> 
+
+	Alias /images /usr/share/images
+	Alias /pipermail /var/lib/mailman/archives/public
+
+	<Directory /var/lib/mailman/archives/public>  
+	    Options FollowSymLinks 
+	    AddDefaultCharset Off
+	</Directory>
+
+	# isoqlog
+
+	Alias /isoqlog /var/www/isoqlog
+
+

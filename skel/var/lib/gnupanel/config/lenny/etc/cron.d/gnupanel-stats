@@ -1,0 +1,20 @@
+#
+#  GNUPanel generador de estadisticas
+#
+# m h dom mon dow user  command
+##0 3	* * *	root	/usr/local/gnupanel/calcula-deudas.pl 1>/dev/null 2>/dev/null
+0 4	* * *	root	/usr/local/gnupanel/genera-estadisticas.pl 1>/dev/null 2>/dev/null
+0 0	1 * *	root	/usr/local/gnupanel/reset-transfer.pl 1>/dev/null 2>/dev/null
+0 */3	* * *	root	/usr/local/gnupanel/genera-postfix-secundario.pl 1>/dev/null 2>/dev/null
+0 */3	* * *	root	/usr/local/gnupanel/genera-amavis-lst.sh 1>/dev/null 2>/dev/null
+0 5	* * *	root	/usr/local/gnupanel/genera-backup.pl 1>/dev/null 2>/dev/null
+0 2	* * *	root	/usr/local/gnupanel/controla-planes.pl 1>/dev/null 2>/dev/null
+#30 0	1 * *	root	/usr/local/gnupanel/gnupanel-garbage-colector.pl 1>/dev/null 2>/dev/null
+0 */1	* * *	root	/usr/local/gnupanel/hay-tickets-pend.pl 1>/dev/null 2>/dev/null
+50 */3	* * *	root	/usr/local/gnupanel/mide-trafico-total-cron.pl 1>/dev/null 2>/dev/null
+0 4	* * *	root	/usr/local/gnupanel/limpiar-spam.sh 1>/dev/null 2>/dev/null
+
+
+
+
+

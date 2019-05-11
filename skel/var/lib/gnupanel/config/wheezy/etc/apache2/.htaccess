@@ -1,0 +1,3 @@
+AuthName "GNUPanel"
+AuthType Basic
+require valid-user

@@ -1,0 +1,131 @@
+#############################################################################################################
+#
+#GNUPanel es un programa para el control de hospedaje WEB 
+#Copyright (C) 2006  Ricardo Marcelo Alvarez rmalvarezkai@gmail.com
+#
+#------------------------------------------------------------------------------------------------------------
+#
+#Este archivo es parte de GNUPanel.
+#
+#	GNUPanel es Software Libre; Usted puede redistribuirlo y/o modificarlo
+#	bajo los términos de la GNU Licencia Pública General (GPL) tal y como ha sido
+#	públicada por la Free Software Foundation; o bien la versión 2 de la Licencia,
+#	o (a su opción) cualquier versión posterior.
+#
+#	GNUPanel se distribuye con la esperanza de que sea útil, pero SIN NINGUNA
+#	GARANTÍA; tampoco las implícitas garantías de MERCANTILIDAD o ADECUACIÓN A UN
+#	PROPÓSITO PARTICULAR. Consulte la GNU General Public License (GPL) para más
+#	detalles.
+#
+#	Usted debe recibir una copia de la GNU General Public License (GPL)
+#	junto con GNUPanel; si no, escriba a la Free Software Foundation Inc.
+#	51 Franklin Street, 5º Piso, Boston, MA 02110-1301, USA.
+#
+#------------------------------------------------------------------------------------------------------------
+#
+#This file is part of GNUPanel.
+#
+#	GNUPanel is free software; you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation; either version 2 of the License, or
+#	(at your option) any later version.
+#
+#	GNUPanel is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#	You should have received a copy of the GNU General Public License
+#	along with GNUPanel; if not, write to the Free Software
+#	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#
+#------------------------------------------------------------------------------------------------------------
+#
+#############################################################################################################
+    
+
+#########################################################################################################
+APT=/usr/bin/apt-get
+PROGRAMAS=./listado.apt
+CAT=/bin/cat
+GREP=/bin/grep
+SKEL=skel
+CP=/bin/cp
+CUSUARIO=/bin/chown
+CMODO=/bin/chmod
+TIEMPO=`date +%s`
+
+# "Escriba la contraseña de postgresql para la base de datos principal de GNUPanel: "
+# "Write postgresql password for the GNUPanel main database: "
+GNUPANEL_PG=
+
+# "Escriba la contraseña de postgresql para proftpd: "
+# "Write postgresql password for proftpd: "
+PROFTPD_PG=
+
+# "Escriba la contraseña de postgresql para powerdns: "
+# "Write postgresql password for powerdns: "
+PDNS_PG=
+
+# "Escriba la contraseña de postgresql para apache: "
+# "Write postgresql password for apache: "
+APACHE_PG=
+
+# "Escriba la contraseña de postgresql para Postfix: "
+# "Write postgresql password for Postfix: "
+POSTFIX_PG=
+
+# "Escriba la contraseña de root para MySQL: "
+# "Write root password for MySQL: "
+MYSQL_PASSWD=
+
+# "Escriba la IP principal de este servidor: "
+# "Write main IP for this server: "
+IP=
+
+# "Escriba la IP publica de este servidor: "
+# "Write public IP for this server: "
+IP_INTERNET=
+
+# "Escriba las IP de los servidores de nombres de su proveedor: "
+# "Write the IP of your provider nameservers: "
+IP_DNS_PROVEEDOR=
+
+# "Escriba las IP (separadas por un espacio) de las maquinas que pueden utilizar su DNS (Recomendado: NINGUNA)."
+# "Write the IP (separated by a space) for the hosts that can use your DNS (Recommended value: NONE)."
+IP_ALLOW_RECURSION=
+
+# "Escriba el dominio principal de GNUPanel (sin www): "
+# "Write main domain for GNUPanel (without www): "
+DOMINIO_PRINCIPAL=
+
+# "Escriba el correo del administrador de GNUPanel: "
+# "Write GNUPanel administrator mail address: "
+CORREO_ADMIN=
+
+# "Escriba la passphrase para generar los certificados SSL: "
+# "Write the passphrase to generate SSL certificate: "
+PALABRA_CLAVE=
+
+# "Escriba la contraseña del administrador de mailman: "
+# "Write Mailman Admin password: "
+CONTRASENA_MAILMAN=
+
+# "Escriba la contraseña del usuario admin: "
+# "Write Admin user password: "
+CONTRASENA_ADMIN=
+
+# "Ingrese un nombre para este servidor (hostname): "
+# "Set a name for this server (hostname): "
+NOMBRE_SERVIDOR=
+
+# "Escriba la transferencia maxima asignada a su servidor (MB): "
+# "Write the allowed bandwidth for this server (MB): "
+TRANSFERENCIA_SERVIDOR=
+
+# "Escriba el espacio en disco maximo para los sitios web (MB): "
+# "Write the allowed disk space for virtual hosts (MB): "
+ESPACIO_SERVIDOR=
+
+
+

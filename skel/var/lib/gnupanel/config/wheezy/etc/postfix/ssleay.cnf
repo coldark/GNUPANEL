@@ -1,0 +1,23 @@
+#
+# SSLeay example configuration file.
+#
+
+RANDFILE                = $ENV::HOME/.rnd
+
+[ v3_ca ]
+
+[ req ]
+default_bits            = 1024
+default_keyfile         = privkey.pem
+distinguished_name      = req_distinguished_name
+prompt                  = no
+
+[ req_distinguished_name ]
+countryName                     = AR
+stateOrProvinceName             = BUENOS AIRES
+localityName                    = CAPITAL FEDERAL
+organizationName                = GNUPANEL
+organizationalUnitName          = GNUPanel
+commonName                      = gnupanel.org
+emailAddress                    = rmalvarez@gnupanel.org
+

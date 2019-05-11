@@ -1,0 +1,25 @@
+# Here comes the local changes the user made, like configuration of 
+# the several backends that exists.
+gpgsql-host=localhost
+gpgsql-dbname=gnupanel
+gpgsql-user=pdns
+gpgsql-password=PASS_PDNS_PG
+gpgsql-basic-query=select content,ttl,prio,type,domain_id,name from gnupanel_pdns_records where type='%s' and name='%s'
+gpgsql-id-query=select content,ttl,prio,type,domain_id,name from gnupanel_pdns_records where type='%s' and name='%s' and domain_id=%d
+gpgsql-any-query=select content,ttl,prio,type,domain_id,name from gnupanel_pdns_records where name='%s'
+gpgsql-any-id-query=select content,ttl,prio,type,domain_id,name from gnupanel_pdns_records where name='%s' and domain_id=%d
+gpgsql-list-query=select content,ttl,prio,type,domain_id,name from gnupanel_pdns_records where domain_id=%d
+gpgsql-master-zone-query=select master from gnupanel_pdns_domains where name='%s' and type='SLAVE'
+gpgsql-info-zone-query=select id,name,master,last_check,notified_serial,type from gnupanel_pdns_domains where name='%s'
+gpgsql-info-all-slaves-query=select id,name,master,last_check,type from gnupanel_pdns_domains where type='SLAVE'
+gpgsql-supermaster-query=select account from gnupanel_pdns_supermasters where ip='%s' and nameserver='%s'
+gpgsql-insert-slave-query=insert into gnupanel_pdns_domains (type,name,master,account) values('SLAVE','%s','%s','%s')
+gpgsql-insert-record-query=insert into gnupanel_pdns_records (content,ttl,prio,type,domain_id,name) values ('%s',%d,%d,'%s',%d,'%s')
+gpgsql-update-serial-query=update gnupanel_pdns_domains set notified_serial=%d where id=%d
+gpgsql-update-lastcheck-query=update gnupanel_pdns_domains set notified_serial=%d where id=%d
+gpgsql-info-all-master-query=select id,name,master,last_check,notified_serial,type from gnupanel_pdns_domains where type='MASTER'
+gpgsql-delete-zone-query= delete from gnupanel_pdns_records where domain_id=%d
+
+
+
+

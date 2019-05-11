@@ -1,0 +1,9 @@
+/var/log/razor-agent.log {
+	daily
+	rotate 9
+	size 4M
+	compress
+	nomail
+	notifempty
+	missingok
+}
