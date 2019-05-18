@@ -1,0 +1,10 @@
+/var/log/maildrop/*.log {
+	missingok
+	daily
+	rotate 9
+	size 4M
+	compress
+	notifempty
+	su root root
+	create 0660 correos mail
+}

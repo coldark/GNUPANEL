@@ -1,0 +1,12 @@
+
+/var/log/mide-trafico-total-cron.pl.log {
+	daily
+	size 1M
+	rotate 7
+	compress
+	notifempty
+	prerotate
+		/usr/local/gnupanel/mide-trafico-total-cron.pl > /dev/null
+	endscript
+}
+

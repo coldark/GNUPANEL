@@ -1,0 +1,14 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          mailman-qrunner
+# Required-Start:    $syslog $local_fs $remote_fs $named $network postgresql
+# Required-Stop:     $syslog $local_fs $remote_fs $named $network postgresql
+# Should-Start:      
+# Should-Stop:       
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Mailman Master Queue Runner 
+# Description:       Starts and stops the Mailman queue runners, used to
+#                    manage the various message queues within the Mailman
+#                    mailing list manager.
+### END INIT INFO

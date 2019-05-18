@@ -1,0 +1,160 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          gnupanel-transf
+# Required-Start:    $remote_fs $network $named $netdaemons $syslog $postgresql-8.4
+# Required-Stop:     $remote_fs $network $named $netdaemons $syslog $postgresql-8.4
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Script de inicio del firewall
+# Description:       This file should be used to construct scripts to be
+#                    placed in /etc/init.d.
+### END INIT INFO
+
+#############################################################################################################
+#
+#GNUPanel es un programa para el control de hospedaje WEB 
+#Copyright (C) 2006  Ricardo Marcelo Alvarez rmalvarezkai@gmail.com
+#
+#------------------------------------------------------------------------------------------------------------
+#
+#Este archivo es parte de GNUPanel.
+#
+#	GNUPanel es Software Libre; Usted puede redistribuirlo y/o modificarlo
+#	bajo los términos de la GNU Licencia Pública General (GPL) tal y como ha sido
+#	públicada por la Free Software Foundation; o bien la versión 2 de la Licencia,
+#	o (a su opción) cualquier versión posterior.
+#
+#	GNUPanel se distribuye con la esperanza de que sea útil, pero SIN NINGUNA
+#	GARANTÍA; tampoco las implícitas garantías de MERCANTILIDAD o ADECUACIÓN A UN
+#	PROPÓSITO PARTICULAR. Consulte la GNU General Public License (GPL) para más
+#	detalles.
+#
+#	Usted debe recibir una copia de la GNU General Public License (GPL)
+#	junto con GNUPanel; si no, escriba a la Free Software Foundation Inc.
+#	51 Franklin Street, 5º Piso, Boston, MA 02110-1301, USA.
+#
+#------------------------------------------------------------------------------------------------------------
+#
+#This file is part of GNUPanel.
+#
+#	GNUPanel is free software; you can redistribute it and/or modify
+#	it under the terms of the GNU General Public License as published by
+#	the Free Software Foundation; either version 2 of the License, or
+#	(at your option) any later version.
+#
+#	GNUPanel is distributed in the hope that it will be useful,
+#	but WITHOUT ANY WARRANTY; without even the implied warranty of
+#	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#	GNU General Public License for more details.
+#
+#	You should have received a copy of the GNU General Public License
+#	along with GNUPanel; if not, write to the Free Software
+#	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+#
+#------------------------------------------------------------------------------------------------------------
+#
+#############################################################################################################
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DESC="Medidor de la transferencia de GNUPanel"
+
+NAME=gnupanel-transf
+
+#NAME_0=mide-trafico-correo.pl
+#NAME_1=mide-trafico-ftp.pl
+#NAME_2=mide-trafico-http.pl
+NAME_3=mide-espacio-disco.pl
+NAME_4=mide-datos-servidor.pl
+NAME_5=configura-apache.pl
+NAME_6=configura-mailman.pl
+NAME_7=envia-mensajes.pl
+
+#DAEMON_0=/usr/local/gnupanel/$NAME_0
+#DAEMON_1=/usr/local/gnupanel/$NAME_1
+#DAEMON_2=/usr/local/gnupanel/$NAME_2
+DAEMON_3=/usr/local/gnupanel/$NAME_3
+DAEMON_4=/usr/local/gnupanel/$NAME_4
+DAEMON_5=/usr/local/gnupanel/$NAME_5
+DAEMON_6=/usr/local/gnupanel/$NAME_6
+DAEMON_7=/usr/local/gnupanel/$NAME_7
+
+#PIDFILE_0=/var/run/$NAME_0.pid
+#PIDFILE_1=/var/run/$NAME_1.pid
+#PIDFILE_2=/var/run/$NAME_2.pid
+PIDFILE_3=/var/run/$NAME_3.pid
+PIDFILE_4=/var/run/$NAME_4.pid
+PIDFILE_5=/var/run/$NAME_5.pid
+PIDFILE_6=/var/run/$NAME_6.pid
+PIDFILE_7=/var/run/$NAME_7.pid
+
+SCRIPTNAME=/etc/init.d/$NAME
+
+test -x $DAEMON || exit 0
+
+d_start() 
+    {
+#    $DAEMON_0
+#    $DAEMON_1
+#    $DAEMON_2
+    $DAEMON_3
+    $DAEMON_4
+    $DAEMON_5
+    $DAEMON_6
+    $DAEMON_7
+    }
+
+d_stop()
+    {
+#    PID_0=`cat $PIDFILE_0`
+#    PID_1=`cat $PIDFILE_1`
+#    PID_2=`cat $PIDFILE_2`
+    PID_3=`cat $PIDFILE_3`
+    PID_4=`cat $PIDFILE_4`
+    PID_5=`cat $PIDFILE_5`
+    PID_6=`cat $PIDFILE_6`
+    PID_7=`cat $PIDFILE_7`
+
+#    kill -TERM ${PID_0}
+#    kill -TERM ${PID_1}
+#    kill -TERM ${PID_2}
+    kill -TERM ${PID_3}
+    kill -TERM ${PID_4}
+    kill -TERM ${PID_5}
+    kill -TERM ${PID_6}
+    kill -TERM ${PID_7}
+    
+#    rm -f ${PIDFILE_0}
+#    rm -f ${PIDFILE_1}
+#    rm -f ${PIDFILE_2}
+    rm -f ${PIDFILE_3}
+    rm -f ${PIDFILE_4}
+    rm -f ${PIDFILE_5}
+    rm -f ${PIDFILE_6}
+    rm -f ${PIDFILE_7}
+    }
+
+case "$1" in
+  start)
+	echo "Arrancando $DESC: $NAME"
+	d_start
+	echo "."
+	;;
+  stop)
+	echo "Parando $DESC: $NAME"
+	d_stop
+	echo "."
+	;;
+  restart)
+	echo "Rearrancando $DESC: $NAME"
+	d_stop
+	sleep 1
+	d_start
+	echo "."
+	;;
+  *)
+	echo "Usage: $SCRIPTNAME {start|stop|restart}" >&2
+	exit 1
+	;;
+esac
+
+exit 0

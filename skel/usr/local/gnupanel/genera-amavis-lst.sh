@@ -35,10 +35,10 @@ do
     /bin/echo ${red_in} >> ${REDES_OUT}
 done
 
+/bin/cat ${REDES_IN} >> ${REDES_OUT}
+
 /etc/init.d/amavis restart
 
 /etc/init.d/postfix restart
-
-
 
 

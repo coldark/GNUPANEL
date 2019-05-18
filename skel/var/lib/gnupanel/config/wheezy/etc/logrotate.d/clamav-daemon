@@ -1,0 +1,11 @@
+/var/log/clamav/clamav.log {
+     rotate 9
+     daily
+     size 4M
+     compress
+     delaycompress
+     create 640  clamav adm
+     postrotate
+     /etc/init.d/clamav-daemon reload-log > /dev/null
+     endscript
+     }

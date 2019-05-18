@@ -58,6 +58,7 @@ for ($string)
 return $string;
 }
 
+chdir("/");
 
 require "/etc/gnupanel/gnupanel.conf.pl";
 
@@ -67,16 +68,13 @@ $fecha_d = `date +%d`;
 $fecha = trim($fecha_Y).trim($fecha_m).trim($fecha_d);
 $fecha = trim($fecha);
 $archivo = "/tmp/backup-gnupanel-".$nombre_servidor."-".$fecha.".sql.gz";
-$comando = "su postgres -c \"/usr/lib/postgresql/8.4/bin/pg_dump -Fc -Z 9 -c -f $archivo ";
+$comando = "su postgres -c \"/usr/lib/postgresql/9.1/bin/pg_dump -Fc -Z 9 -c -f $archivo ";
 $comandar = $comando.$database." \"";
 system($comandar);
 
 $destino = $correo_administrador;
-$comando = "/bin/echo \"\n\nBackup GNUPanel\n\n\n\" | /usr/bin/mutt -s \"Backup GNUPanel\" -a $archivo $destino ";
+$comando = "/bin/echo \"\n\nBackup GNUPanel\n\n\n\" | /usr/bin/mutt -s \"Backup GNUPanel\" -a $archivo -- $destino ";
 system($comando);
 
 $comando = "/bin/rm -f $archivo ";
 system($comando);
-
-
-

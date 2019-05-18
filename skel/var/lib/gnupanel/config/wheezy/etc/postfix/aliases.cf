@@ -1,0 +1,7 @@
+user=postfix
+password=PASAPORTE
+dbname=gnupanel
+table=gnupanel_postfix_alias
+hosts=localhost
+select_field=sale
+where_field=entra

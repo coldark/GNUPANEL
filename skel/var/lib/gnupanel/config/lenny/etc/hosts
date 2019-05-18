@@ -1,0 +1,12 @@
+127.0.0.1       localhost
+IP_PRIVADA  DOMINIO_PRINCIPAL NOMBRE_HOST
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+::fff:127.0.0.1 DOMINIO_PRINCIPAL localhost
+::fff:IP_PRIVADA DOMINIO_PRINCIPAL localhost

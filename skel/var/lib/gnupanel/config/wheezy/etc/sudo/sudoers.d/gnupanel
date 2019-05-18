@@ -1,0 +1,2 @@
+www-data	ALL=(root)  NOPASSWD:/usr/local/gnupanel/bin/habilita-dir.pl
+www-data	ALL=(root)  NOPASSWD:/usr/local/gnupanel/bin/deshabilita-dir.sh

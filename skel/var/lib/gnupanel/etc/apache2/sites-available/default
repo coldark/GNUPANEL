@@ -1,0 +1,131 @@
+NameVirtualHost *
+
+<VirtualHost *>
+	ServerAdmin rmalvarezkai@gmail.com
+	ServerName geeklab.com.ar
+#	ServerAlias www.geeklab.com.ar
+
+	Options -Indexes 
+
+	DocumentRoot /usr/share/gnupanel/gnupanel
+	Alias /estilos /usr/share/gnupanel/estilos	
+
+	<Directory /usr/share/gnupanel/gnupanel> 
+	AddDefaultCharset ISO-8859-1 
+	</Directory> 
+
+	#Interfaz admin
+
+	Alias /admin /usr/share/gnupanel/admin
+	<Directory /usr/share/gnupanel/admin> 
+	Options FollowSymLinks
+	php_admin_value safe_mode On 
+	php_flag register_globals Off 
+	php_admin_value safe_mode_exec_dir /usr/local/gnupanel/bin 
+	php_admin_value include_path .:/usr/share/php:/usr/share/gnupanel/estilos:/usr/share/gnupanel/mensaje-gnu 
+	</Directory> 
+
+	#Interfaz reseller
+
+	Alias /reseller /usr/share/gnupanel/reseller
+	<Directory /usr/share/gnupanel/reseller> 
+	Options FollowSymLinks
+	php_admin_value safe_mode On 
+	php_flag register_globals Off 
+	php_admin_value safe_mode_exec_dir /usr/local/gnupanel/bin 
+	php_admin_value include_path .:/usr/share/php:/usr/share/gnupanel/estilos:/usr/share/gnupanel/mensaje-gnu 
+	</Directory> 
+
+	#Interfaz usuarios
+
+	Alias /users /usr/share/gnupanel/usuarios
+	Alias /usuarios /usr/share/gnupanel/usuarios
+	<Directory /usr/share/gnupanel/usuarios> 
+	Options FollowSymLinks
+	php_admin_value safe_mode On 
+	php_admin_value	max_execution_time 0
+	php_flag register_globals Off 
+	php_admin_value safe_mode_exec_dir /usr/local/gnupanel/bin 
+	php_admin_value include_path .:/usr/share/php:/usr/share/gnupanel/estilos:/usr/share/gnupanel/mensaje-gnu 
+	</Directory> 
+
+	#Interfaz Mail
+
+	Alias /mail /usr/share/gnupanel/mail
+	<Directory /usr/share/gnupanel/mail> 
+	Options FollowSymLinks
+	php_admin_value safe_mode On 
+	php_flag register_globals Off 
+	php_admin_value include_path .:/usr/share/php:/usr/share/gnupanel/estilos:/usr/share/gnupanel/mensaje-gnu 
+	</Directory> 
+
+	#squirrelmail
+
+	Alias /webmail /usr/share/squirrelmail
+	<Directory /usr/share/squirrelmail>
+	    php_flag register_globals off
+	    Options Indexes FollowSymLinks
+	    <IfModule mod_dir.c>
+		DirectoryIndex index.php
+	    </IfModule>
+	    # access to configtest is limited by default to prevent information leak
+	    <Files configtest.php>
+		order deny,allow
+		deny from all
+		allow from 127.0.0.1
+	    </Files>
+	</Directory>
+
+	# phpmyadmin
+
+	Alias /phpmyadmin /usr/share/phpmyadmin
+	<Directory /usr/share/phpmyadmin/>
+	    AllowOverride All
+	</Directory>
+
+	# phppgadmin
+
+	Alias /phppgadmin /usr/share/phppgadmin/
+	<DirectoryMatch /usr/share/phppgadmin/>
+	    Options +FollowSymLinks
+	    AllowOverride None
+	    #order deny,allow
+	    #deny from all
+	    #allow from 127.0.0.0/255.0.0.0
+	    # allow from all
+	    php_flag magic_quotes_gpc Off
+	    php_flag track_vars On
+	    php_flag register_globals On
+	    php_value include_path .
+	    #php_admin_value open_basedir /usr/share/phppgadmin
+	    php_admin_value error_reporting E_ERROR
+	    php_admin_value safe_mode_exec_dir /usr/share/phppgadmin/bin
+	    php_admin_value safe_mode_allowed_env_vars PHP_,PG
+	</DirectoryMatch>
+
+	# Mailman
+
+	ScriptAlias /lists/cgi-bin/mailman /usr/lib/cgi-bin/mailman
+	<Directory /usr/lib/cgi-bin/mailman>
+	    AllowOverride None
+	    Options ExecCGI
+	    Order allow,deny
+	    Allow from all
+	    SetEnv LANG C
+	    SetEnv LC_CTYPE en_US.ISO8859-1
+	    SetEnv LC_ALL en_US
+	    SetEnv LC_MESSAGES en_US
+	</Directory>
+	Alias /images /usr/share/images
+	Alias /pipermail /var/lib/mailman/archives/public
+	ErrorLog /var/log/apache2/lists-error.log
+	<Directory /var/lib/mailman/archives/public>  
+	    Options FollowSymLinks 
+	</Directory>
+
+CustomLog /var/log/apache2/default.log combined 
+CustomLog /var/log/apache2/transfer_default_pg.log transferencia_pg 
+
+</VirtualHost>
+
+

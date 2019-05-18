@@ -1,0 +1,62 @@
+/var/log/calcula-deudas.pl.log {
+	daily
+	size 1M
+	rotate 7
+	compress
+	notifempty
+}
+
+/var/log/configura-apache.pl.log {
+	daily
+	size 1M
+	rotate 7
+	compress
+	notifempty
+}
+
+/var/log/configura-mailman.pl.log {
+	daily
+	size 1M
+	rotate 7
+	compress
+	notifempty
+}
+
+/var/log/envia-mensajes.pl.log {
+	daily
+	size 1M
+	rotate 7
+	compress
+	notifempty
+}
+
+/var/log/genera-estadisticas.pl.log {
+	daily
+	size 1M
+	rotate 7
+	compress
+	notifempty
+}
+
+/var/log/mide-datos-servidor.pl.log {
+	daily
+	size 1M
+	rotate 7
+	compress
+	notifempty
+}
+
+/var/log/mide-espacio-disco.pl.log {
+	daily
+	size 1M
+	rotate 7
+	compress
+	notifempty
+}
+
+
+
+
+
+
+

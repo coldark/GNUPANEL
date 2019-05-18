@@ -1,0 +1,12 @@
+#!/bin/sh -e
+### BEGIN INIT INFO
+# Provides:          postfix mail-transport-agent
+# Required-Start:    $local_fs $remote_fs $syslog $named $network $time postgresql saslauthd
+# Required-Stop:     $local_fs $remote_fs $syslog $named $network postgresql saslauthd
+# Should-Start:      postgresql mysql clamav-daemon postgrey spamassassin
+# Should-Stop:       postgresql mysql clamav-daemon postgrey spamassassin
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: start and stop the Postfix Mail Transport Agent
+# Description:       postfix is a Mail Transport agent
+### END INIT INFO

@@ -1,0 +1,93 @@
+
+LOGDIR="/var/log/maildrop"
+
+# Log File
+#
+LOG_FILE="$LOGDIR/maildropex.log"
+logfile "$LOGDIR/maildroprc.log"
+
+MAILDIRMAKE="/usr/bin/maildirmake"
+MKDIR="/bin/mkdir -p"
+MAILBOX="$HOME/$DEFAULT"
+RMDIR="/bin/rmdir"
+ECHO="/bin/echo"
+TEST="/usr/bin/test"
+DU="/usr/bin/du -s -m"
+MAWK="/usr/bin/mawk"
+MAIL="/usr/bin/mail"
+BASENAME="/usr/bin/basename"
+MKTEMP="/bin/mktemp"
+RM="/bin/rm -f"
+CAT="/bin/cat"
+SED="/bin/sed"
+ARCHIVO_CUOTA="mail-quota.mx"
+
+
+`$TEST -d "$MAILBOX"`
+
+if( $RETURNCODE != 0 )
+{
+	`$MKDIR "$MAILBOX"`
+	`$RMDIR "$MAILBOX"`
+	`$MAILDIRMAKE "$MAILBOX"`
+	`$MAILDIRMAKE -f Sent "$MAILBOX"`
+	`$MAILDIRMAKE -f Trash "$MAILBOX"`
+	`$MAILDIRMAKE -f Queue "$MAILBOX"`
+	`$MAILDIRMAKE -f Drafts "$MAILBOX"`
+	`$MAILDIRMAKE -f SPAM "$MAILBOX"`
+	`$ECHO INBOX.Sent >> $MAILBOX/courierimapsubscribed`
+	`$ECHO INBOX.Trash >> $MAILBOX/courierimapsubscribed`
+	`$ECHO INBOX.Queue >> $MAILBOX/courierimapsubscribed`
+	`$ECHO INBOX.Drafts >> $MAILBOX/courierimapsubscribed`
+	`$ECHO INBOX.SPAM >> $MAILBOX/courierimapsubscribed`
+}
+
+OCUPADO=`$CAT $MAILBOX/$ARCHIVO_CUOTA`
+
+if ( $OCUPADO <= $MAILDIRQUOTA )
+{
+    DESTINO=$MAILBOX
+    if ((/^X-Spam-Flag:.*YES/) || (/^X-Amavis-Alert:.*INFECTED/) || (/^X-Amavis-Alert:.*BANNED/))
+    {
+	DESTINO=$DESTINO.SPAM/
+	`$TEST -d "$DESTINO"`
+	if( $RETURNCODE != 0 )
+	{
+	    `$MAILDIRMAKE -f SPAM "$MAILBOX"`
+	    `$ECHO INBOX.SPAM >> $MAILBOX/courierimapsubscribed`
+	}
+	to "$DESTINO"
+    }
+    else
+    {
+	to "$DESTINO"
+    }
+}
+else
+{
+    DESTINO=`$BASENAME $MAILBOX`
+    `$ECHO "$DESTINO -> $OCUPADO > $MAILDIRQUOTA" >> $LOG_FILE`
+    COMANDO="|$MAIL -a \"From: $DESTINO\" -s \"The account $DESTINO quota exceeded\" $FROM"
+    to "$COMANDO"
+##############BORRAR##############
+##    DESTINO=$MAILBOX
+##    if ((/^X-Spam-Flag:.*YES/) || (/^X-Amavis-Alert:.*INFECTED/) || (/^X-Amavis-Alert:.*BANNED/))
+##    {
+##	DESTINO=$DESTINO.SPAM/
+##	`$TEST -d "$DESTINO"`
+##	if( $RETURNCODE != 0 )
+##	{
+##	    `$MAILDIRMAKE -f SPAM "$MAILBOX"`
+##	    `$ECHO INBOX.SPAM >> $MAILBOX/courierimapsubscribed`
+##	}
+##	to "$DESTINO"
+##    }
+##    else
+##    {
+##	to "$DESTINO"
+##    }
+##############/BORRAR##############
+}
+
+
+

@@ -1,0 +1,71 @@
+#!/bin/bash
+
+function permisos_directorio
+    {
+    directorio=$1
+    usuario=$2
+    grupo=$3
+    p_archivo=$4
+    p_directorio=$5
+    chown -R ${usuario} ${directorio}
+    chgrp -R ${grupo} ${directorio}
+    chmod ${p_directorio} ${directorio}
+    cd ${directorio}
+    find . -type d -exec chmod $p_directorio {} \;
+    find . -type f -exec chmod $p_archivo {} \;
+    }
+
+function permisos_archivo
+    {
+    archivo=$1
+    usuario=$2
+    grupo=$3
+    p_archivo=$4
+    chown ${usuario} ${archivo}
+    chgrp ${grupo} ${archivo}
+    chmod ${p_archivo} ${archivo}
+    }
+
+
+
+################################################################################
+SKEL=${1}
+
+DIRECTORIO_VOLVER=`pwd`
+
+DIRECTORIOS_GENERALES=${SKEL}/etc/permisos/directorios
+
+for ENTRADA in `cat ${DIRECTORIOS_GENERALES} | grep -v "#" | grep -v "^ "`
+    do
+    P_1=`echo "${ENTRADA}" | mawk -F";" '{print $1}'`
+    P_2=`echo "${ENTRADA}" | mawk -F";" '{print $2}'`
+    P_3=`echo "${ENTRADA}" | mawk -F";" '{print $3}'`
+    P_4=`echo "${ENTRADA}" | mawk -F";" '{print $4}'`
+    P_5=`echo "${ENTRADA}" | mawk -F";" '{print $5}'`
+    permisos_directorio ${P_1} ${P_2} ${P_3} ${P_4} ${P_5} 
+    done
+
+chown root:gnupanel /usr/local/gnupanel
+chmod 0555 /usr/local/gnupanel
+
+chown mail:gnupanel /usr/local/gnupanel/autoreply.pl
+chmod 0540 /usr/local/gnupanel/autoreply.pl
+
+chown mail:gnupanel /usr/local/gnupanel/autoreply-aux.pl
+chmod 0540 /usr/local/gnupanel/autoreply-aux.pl
+
+chown root:gnupanel /etc/gnupanel
+chmod 0555 /etc/gnupanel
+
+chown www-data:www-data /etc/gnupanel/*.php
+chmod 0440 /etc/gnupanel/*.php
+
+chown mail:gnupanel /etc/gnupanel/gnupanel.conf.pl
+chmod 0440 /etc/gnupanel/gnupanel.conf.pl
+
+cd ${DIRECTORIO_VOLVER}
+
+################################################################################
+
+
+

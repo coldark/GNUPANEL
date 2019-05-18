@@ -1,0 +1,74 @@
+/var/log/mailman/vette /var/log/mailman/error /var/log/mailman/bounce {
+	su root list
+	daily
+	missingok
+	create 0664 list list
+	rotate 9
+	size 4M
+	compress
+	delaycompress
+        sharedscripts
+        postrotate
+            [ -f '/var/run/mailman/mailman.pid' ] && /usr/lib/mailman/bin/mailmanctl -q reopen || exit 0
+        endscript
+}
+
+/var/log/mailman/mischief {
+	su root list
+	daily
+	size 4M
+	missingok
+	create 0664 list www-data
+	rotate 9
+	compress
+	delaycompress
+	sharedscripts
+	postrotate
+	    [ -f '/var/run/mailman/mailman.pid' ] && /usr/lib/mailman/bin/mailmanctl -q reopen || exit 0
+	endscript
+}
+
+/var/log/mailman/digest {
+	su root list
+	daily
+	size 4M
+	missingok
+	create 0664 list list
+	rotate 9
+	compress
+	delaycompress
+        sharedscripts
+        postrotate
+            [ -f '/var/run/mailman/mailman.pid' ] && /usr/lib/mailman/bin/mailmanctl -q reopen || exit 0
+        endscript
+}
+
+/var/log/mailman/subscribe /var/log/mailman/post {
+	su root list
+	daily
+	size 4M
+	missingok
+	create 0664 list list
+	rotate 9
+	compress
+	delaycompress
+        sharedscripts
+        postrotate
+            [ -f '/var/run/mailman/mailman.pid' ] && /usr/lib/mailman/bin/mailmanctl -q reopen || exit 0
+        endscript
+}
+
+/var/log/mailman/qrunner /var/log/mailman/fromusenet /var/log/mailman/locks /var/log/mailman/smtp /var/log/mailman/smtp-failure {
+	su root list
+	daily
+	size 4M
+	missingok
+	create 0664 list list
+	rotate 9
+	compress
+	delaycompress
+        sharedscripts
+        postrotate
+            [ -f '/var/run/mailman/mailman.pid' ] && /usr/lib/mailman/bin/mailmanctl -q reopen || exit 0
+        endscript
+}

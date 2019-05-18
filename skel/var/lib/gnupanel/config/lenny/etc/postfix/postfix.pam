@@ -1,0 +1,20 @@
+#%PAM-1.0
+#auth       required	pam_listfile.so item=user sense=deny file=/etc/ftpusers onerr=succeed
+#@include common-auth
+
+# This is disabled because anonymous logins will fail otherwise,
+# unless you give the 'ftp' user a valid shell, or /bin/false and add
+# /bin/false to /etc/shells.
+#auth       required	pam_shells.so
+
+#@include common-account
+#@include common-session
+
+auth required pam_pgsql.so host=localhost database=gnupanel user=postfix password=PASAPORTE table=gnupanel_postfix_mailuser user_column=address pwd_column=passwd pw_type=crypt
+account sufficient pam_pgsql.so host=localhost database=gnupanel user=postfix password=PASAPORTE table=gnupanel_postfix_mailuser user_column=address pwd_column=passwd pw_type=crypt
+password required pam_pgsql.so host=localhost database=gnupanel user=postfix password=PASAPORTE table=gnupanel_postfix_mailuser user_column=address pwd_column=passwd pw_type=crypt
+
+
+
+
+

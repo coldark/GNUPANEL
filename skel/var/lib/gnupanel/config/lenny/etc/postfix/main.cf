@@ -1,0 +1,81 @@
+# See /usr/share/postfix/main.cf.dist for a commented, more complete version
+
+biff = no
+
+# appending .domain is the MUA's job.
+append_dot_mydomain = no
+
+# Uncomment the next line to generate "delayed mail" warnings
+#delay_warning_time = 4h
+queue_directory = /var/spool/postfix
+myhostname = DOMINIO
+#alias_maps = hash:/etc/aliases pgsql:/etc/postfix/aliases.cf
+#alias_database = hash:/etc/aliases pgsql:/etc/postfix/aliases.cf
+
+alias_maps = hash:/etc/aliases hash:/var/lib/mailman/data/aliases
+alias_database = hash:/etc/aliases hash:/var/lib/mailman/data/aliases
+
+#myorigin = DOMINIO
+home_mailbox = Maildir/
+#mail_spool_directory = /var/mail
+##########################################################################################################################################################################
+virtual_mailbox_base=/var/mail/correos
+virtual_mailbox_maps=pgsql:/etc/postfix/virt.cf
+virtual_uid_maps=pgsql:/etc/postfix/uids.cf
+virtual_gid_maps=pgsql:/etc/postfix/gids.cf
+transport_maps = pgsql:/etc/postfix/transport_listas.cf pgsql:/etc/postfix/transport_autoreply.cf pgsql:/etc/postfix/transport.cf hash:/etc/postfix/transport_local
+virtual_maps=pgsql:/etc/postfix/virtual.cf
+#access_maps=mysql:/etc/postfix/access.cf
+##########################################################################################################################################################################
+mydestination = localhost $transport_maps
+#relayhost = no
+mynetworks = /etc/postfix/redes.cf
+mailbox_command = /usr/bin/maildrop -d ${USER} -f ${SENDER} ${EXTENSION}
+mailbox_size_limit = 20000000
+virtual_mailbox_limit = 20000000
+recipient_delimiter = +
+
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_local_domain =
+broken_sasl_auth_clients = yes
+smtpd_sasl_security_options = noanonymous
+#smtp_sasl_password_maps = pgsql:/etc/postfix/sasl-users.cf
+
+smtpd_use_tls = yes
+smtpd_tls_auth_only = no
+smtpd_tls_key_file = /etc/postfix/gnupanel.key
+smtpd_tls_cert_file = /etc/postfix/gnupanel.crt
+smtpd_tls_CAfile = /etc/postfix/cacert.pem
+smtpd_tls_received_header = yes
+smtpd_tls_session_cache_timeout = 3600s
+smtpd_tls_loglevel = 1
+tls_random_source = dev:/dev/urandom
+smtp_tls_note_starttls_offer = yes
+
+smtp_never_send_ehlo = yes
+smtp_helo_required = yes
+strict_rfc821_envelopes = yes
+#header_checks = pcre:/etc/postfix/header_checks
+#body_checks = pcre:/etc/postfix/body_checks
+#body_checks = regexp:/etc/postfix/body_checks
+
+#local_only = $check_recipient_access, reject
+#smtpd_restriction_classes = local_only
+
+smtpd_client_restrictions = permit_mynetworks, reject_rbl_client cbl.abuseat.org, reject_unauth_pipelining
+smtpd_sender_restrictions = reject_unauth_pipelining, permit_mynetworks 
+smtpd_recipient_restrictions = reject_non_fqdn_recipient, reject_unauth_pipelining, reject_rbl_client cbl.abuseat.org, permit_sasl_authenticated, permit_mynetworks, reject_unauth_destination
+
+bounce_size_limit = 20000000
+message_size_limit = 20000000
+
+inet_interfaces = all
+#smtp_bind_address = IP_SERVIDOR
+#smtp_bind_address = 127.0.0.1
+content_filter = smtp-amavis:[127.0.0.1]:10024
+
+owner_request_special = no
+maildrop_destination_recipient_limit = 1
+mailman_destination_recipient_limit = 1
+virtual_transport = maildrop
+virtual_destination_recipient_limit = 1

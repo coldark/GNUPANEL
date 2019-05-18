@@ -1,0 +1,12 @@
+
+/usr/share/gnupanel;root;gnupanel;640;750
+/var/www/sitios;www-data;www-data;600;700
+/usr/share/squirrelmail;www-data;www-data;440;550
+/var/lib/squirrelmail;www-data;www-data;660;770
+/var/spool/squirrelmail;www-data;www-data;220;330
+/usr/share/phpmyadmin;www-data;www-data;440;550
+/usr/share/phppgadmin;www-data;www-data;440;550
+/var/lib/gnupanel;root;gnupanel;640;750
+/usr/local/gnupanel;root;gnupanel;540;550
+/usr/local/gnupanel/bin;root;gnupanel;550;550
+/usr/local/gnupanel/lang;root;gnupanel;440;550

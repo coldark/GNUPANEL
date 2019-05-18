@@ -1,0 +1,12 @@
+/var/log/clamav/freshclam.log {
+     rotate 9
+     daily
+     size 4M
+     compress
+     delaycompress
+     missingok
+     create 640  clamav adm
+     postrotate
+     /etc/init.d/clamav-freshclam reload-log > /dev/null
+     endscript
+     }

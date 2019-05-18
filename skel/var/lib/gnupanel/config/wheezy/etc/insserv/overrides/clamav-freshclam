@@ -1,0 +1,13 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          clamav-freshclam
+# Required-Start:    $remote_fs $syslog postgresql
+# Should-Start:      clamav-daemon
+# Required-Stop:     $remote_fs $syslog postgresql
+# Should-Stop:       
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: ClamAV virus database updater
+# Description:       Clam AntiVirus virus database updater
+### END INIT INFO
