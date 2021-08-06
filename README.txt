@@ -37,3 +37,6 @@ Once the base system is ready you should follow these steps to have GNUPanel wor
     https://gnupanel.main_domain/users
     https://gnupanel.main_domain/mail
 
+
+Fork of: https://wp.geeklab.com.ar/gl/gnupanel/
+
